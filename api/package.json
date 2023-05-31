@@ -4,9 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "Gilmer J. Vizconde, gilmerjoe.vizconde2@gmail.com",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dotenv": "^16.1.2",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.22",
+    "pg": "^8.11.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.31.1"
+  }
 }
