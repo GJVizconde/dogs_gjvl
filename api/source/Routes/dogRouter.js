@@ -8,7 +8,7 @@ const {
 const dogRouter = Router();
 
 dogRouter.get("/", getDogsHandler);
-dogRouter.post("/", createDogHandler);
 dogRouter.get("/:id", getDogHandler);
+dogRouter.post("/", createDogHandler);
 
 module.exports = dogRouter;
