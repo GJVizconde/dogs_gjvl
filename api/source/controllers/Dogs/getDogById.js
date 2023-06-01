@@ -1,5 +1,7 @@
 const axios = require("axios");
 
+const { Dog, Temperament } = require("../../db");
+
 const getDogById = async (id, source) => {
   //   const convertirAObjeto = (arr) => {
   //     const converting = arr.map((elem) => {
@@ -44,6 +46,18 @@ const getDogById = async (id, source) => {
 
     // console.log(cleaned);
 
+    return findedDog;
+  } else {
+    const findedDog = await Dog.findByPk(id, {
+      include: {
+        model: Temperament,
+        attributes: ["name"],
+        through: {
+          attributes: [],
+        },
+      },
+    });
+    // console.log(findedDog);
     return findedDog;
   }
 };

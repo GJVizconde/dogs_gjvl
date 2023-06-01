@@ -1,6 +1,13 @@
-const { Dog } = require("../../db");
+const { Dog, Temperament } = require("../../db");
 
-const createDog = async ({ name, height, weight, life_span, image }) => {
+const createDog = async ({
+  name,
+  height,
+  weight,
+  life_span,
+  image,
+  temperaments,
+}) => {
   const newDog = await Dog.create({
     name,
     height,
@@ -9,6 +16,11 @@ const createDog = async ({ name, height, weight, life_span, image }) => {
     image,
   });
 
+  // console.log(newDog);
+
+  await newDog.addTemperaments(temperaments);
+
   return newDog;
 };
+
 module.exports = createDog;
